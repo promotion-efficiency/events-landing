@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+    --color-blush: #F7EBDC;
+    --color-burgundy: #471e1b;
+}
+
+/* Custom Cursor Styles - Keep default cursor visible */
+
+/* Image hover zoom effect */
+img {
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Ensure Next.js Image components also get the hover effect */
+.image-hover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Typography - Use Kanun font for paragraphs, labels, and footer */
+p {
+  font-family: var(--font-kanun-ar);
+  line-height: 1.4;
+}
+
+label {
+  font-family: var(--font-kanun-ar);
+}
+
+footer {
+  font-family: var(--font-kanun-ar);
+}
+
+/* Reduce spacing between headings and paragraphs */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+/* Reduce spacing between list items */
+ul, ol {
+  line-height: 1.3;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+/* Kanun font utility class */
+.font-kanun {
+  font-family: var(--font-kanun-ar);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Default font (for English) */
+body {
+    font-family: var(--font-angie-sans-pro), sans-serif;
+}
+
+/* Arabic text (RTL) */
+[dir="rtl"] body {
+    font-family: var(--font-lyon-arabic), sans-serif;
+}
+
+/* Elegant Arabic display font */
+.ar-display {
+    font-family: var(--font-lyon-arabic), serif;
+}
+
+.en-display {
+    font-family: var(--font-angie-sans-pro), sans-serif;
+}
+
+/* Kanun AR+ for accent text */
+.kanun {
+    font-family: var(--font-kanun-ar), sans-serif;
+}
+
+
+:root {
+    --container-x: 1rem;
+    --container-x-sm: 1rem;
+    --container-x-lg: 4rem;
+    --container-x-xl: 4rem;
+}
+
+.container-x {
+    @apply w-full;
+    padding-inline: var(--container-x);
+}
+
+.container-s {
+    @apply w-full;
+    padding-inline-start: 0;
+}
+
+@media (min-width: 640px) {
+    .container-x {
+        padding-inline: var(--container-x-sm);
+    }
+
+    .container-s {
+        padding-inline-start: var(--container-x-sm);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-x {
+        padding-inline: var(--container-x-lg);
+    }
+
+    .container-s {
+        padding-inline-start: var(--container-x-lg);
+    }
+}
+
+@media (min-width: 1280px) {
+    .container-x {
+        padding-inline: var(--container-x-xl);
+    }
+
+    .container-s {
+        padding-inline-start: var(--container-x-xl);
+    }
+}
+
+
+#miraf-map .leaflet-pane.leaflet-tile-pane {
+    filter: sepia(0.95) saturate(6) hue-rotate(330deg) brightness(0.8);
+}
+
+.miraf-label {
+    color: #f9e8df;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.1;
+    text-align: center;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+}
+
+.pin-spacer-gallery-st {
+    background: #F7EBDC;
+}
