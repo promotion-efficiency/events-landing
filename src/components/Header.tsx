@@ -54,30 +54,34 @@ export default function Header() {
             <div className="container-x">
                 <div className="flex items-start justify-between w-full py-5">
                     {/* Logo */}
-                    <a href="#" className="flex items-center select-none">
-                        <Image src="/icons/logo.png" alt="Miraf District Logo" width={100} height={60} priority className="h-28 w-28 md:h-32 md:w-32 object-contain"/>
+                    <a href="#" className="flex items-center select-none no-logo-hover">
+                        <Image src="/icons/logo.png" alt="Promotion Efficiency Logo" width={100} height={60} priority className="h-28 w-28 md:h-32 md:w-32 object-contain"/>
                     </a>
 
                     {/* Desktop nav */}
                     <nav className="hidden lg:flex items-center gap-8 text-md font-medium">
+                        <Link href="/#services" className="relative text-white hover:text-blush transition-colors duration-300 group">
+                            {t("nav.services")}
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blush transition-all duration-300 group-hover:w-full"></span>
+                        </Link>
                         <Link href="/#district" className="relative text-white hover:text-blush transition-colors duration-300 group">
                             {t("nav.district")}
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blush transition-all duration-300 group-hover:w-full"></span>
                         </Link>
-                        <Link href="/#overview" className="relative text-white hover:text-blush transition-colors duration-300 group">
-                            {t("nav.overview")}
+                        <Link href="/#portfolio" className="relative text-white hover:text-blush transition-colors duration-300 group">
+                            {t("nav.portfolio")}
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blush transition-all duration-300 group-hover:w-full"></span>
                         </Link>
                         <Link href="/#gallery" className="relative text-white hover:text-blush transition-colors duration-300 group">
                             {t("nav.gallery")}
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blush transition-all duration-300 group-hover:w-full"></span>
                         </Link>
-                        <Link href="/#developer" className="relative text-white hover:text-blush transition-colors duration-300 group">
-                            {t("nav.developer")}
+                        <Link href="/#clients" className="relative text-white hover:text-blush transition-colors duration-300 group">
+                            {t("nav.clients")}
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blush transition-all duration-300 group-hover:w-full"></span>
                         </Link>
-                        <Link href="/#register" className="rounded-full border border-white/40 px-4 py-2 hover:bg-white/10 hover:border-blush/60 hover:text-blush transition-all duration-300">
-                            {t("nav.register")}
+                        <Link href="/#contact" className="rounded-full border border-white/40 px-4 py-2 hover:bg-white/10 hover:border-blush/60 hover:text-blush transition-all duration-300">
+                            {t("nav.contact")}
                         </Link>
                         <button
                             onClick={() => handleLanguageSelection(selectedLanguage)}
@@ -102,11 +106,12 @@ export default function Header() {
             {/* Sidebar (mobile) */}
             <div className={`fixed inset-y-0 left-0 z-40 w-64 bg-[rgba(74,17,18,0.92)] backdrop-blur-md ring-1 ring-white/10 transform transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}>
                 <div className="px-6 py-6 space-y-3 text-md text-white">
+                    <Link className="block py-2 text-white hover:text-blush transition-colors duration-300" href="/#services" onClick={() => setMenuOpen(false)}>{t("nav.services")}</Link>
                     <Link className="block py-2 text-white hover:text-blush transition-colors duration-300" href="/#district" onClick={() => setMenuOpen(false)}>{t("nav.district")}</Link>
-                    <Link className="block py-2 text-white hover:text-blush transition-colors duration-300" href="/#overview" onClick={() => setMenuOpen(false)}>{t("nav.overview")}</Link>
+                    <Link className="block py-2 text-white hover:text-blush transition-colors duration-300" href="/#portfolio" onClick={() => setMenuOpen(false)}>{t("nav.portfolio")}</Link>
                     <Link className="block py-2 text-white hover:text-blush transition-colors duration-300" href="/#gallery" onClick={() => setMenuOpen(false)}>{t("nav.gallery")}</Link>
-                    <Link className="block py-2 text-white hover:text-blush transition-colors duration-300" href="/#developer" onClick={() => setMenuOpen(false)}>{t("nav.developer")}</Link>
-                    <Link className="block py-2 text-white hover:text-blush transition-colors duration-300" href="/#register" onClick={() => setMenuOpen(false)}>{t("nav.register")}</Link>
+                    <Link className="block py-2 text-white hover:text-blush transition-colors duration-300" href="/#clients" onClick={() => setMenuOpen(false)}>{t("nav.clients")}</Link>
+                    <Link className="block py-2 text-white hover:text-blush transition-colors duration-300" href="/#contact" onClick={() => setMenuOpen(false)}>{t("nav.contact")}</Link>
 
                     <button
                         className={`mt-2 w-full rounded-full border border-white/20 px-4 py-2 text-white hover:text-blush hover:border-blush/60 transition-all duration-300 ${selectedLanguage === 'ar' ? "en-display" : "ar-display"}`}

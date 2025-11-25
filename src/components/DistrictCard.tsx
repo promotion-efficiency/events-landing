@@ -5,7 +5,7 @@ import Image from "next/image";
 type AboutCardProps = {
     imageSrc: string;
     imageAlt: string;
-    iconSrc: string;
+    iconSrc?: string;
     title: string;
     body: string;
     imageOnTop?: boolean;
@@ -34,7 +34,7 @@ export default function DistrictCard({
     | No fixed height in `svh`. Image shrinks naturally on small screens.
     */
     const ImageBlock = (
-        <div className="relative w-full rounded-[22px] overflow-hidden aspect-[16/10]">
+        <div className="relative w-full overflow-hidden aspect-[16/10]">
             <Image
                 src={imageSrc}
                 alt={imageAlt || title}
@@ -53,20 +53,11 @@ export default function DistrictCard({
     | Body width constrained for readability.
     */
     const TextBlock = (
-        <div className="text-burgundy">
-            <div className="flex items-center gap-2">
-                <Image
-                    src={iconSrc}
-                    alt="icon"
-                    width={32}
-                    height={32}
-                    className="h-8 w-8 object-contain"
-                />
-            </div>
-            <h3 className="mt-2 text-5xl sm:text-6xl font-semibold">
+        <div className="text-blush">
+            <h3 className="text-5xl sm:text-6xl font-light">
                 {title}
             </h3>
-            <p className={`mt-3 xl:mt-6 text-burgundy/80 text-base sm:text-md leading-relaxed ${bodyWidth}`}>
+            <p className={`mt-3 xl:mt-6 text-blush/80 text-base sm:text-md leading-relaxed ${bodyWidth}`}>
                 {body}
             </p>
         </div>

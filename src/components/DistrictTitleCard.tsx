@@ -26,7 +26,7 @@ type Props = {
     titleLine2: string;
     titleLine3: string;
     body: string;
-    iconSrc: string;
+    iconSrc?: string;
     iconAlt?: string;
     paddingStartClass?: string;
     titleSizeClass?: string;
@@ -70,22 +70,24 @@ export default function DistrictTitleCard(
     */
     return (
         <div className={`flex flex-col w-full h-full justify-center min-h-[inherit]  ${paddingStartClass} ${className}`}>
-            <h2 className={`leading-[0.95] tracking-tight text-burgundy ${titleSizeClass}`}>
+            <h2 className={`leading-[0.95] tracking-tight text-blush ${titleSizeClass}`}>
                 <span className={`${gapClass}`}>
-                    <span className="inline">{titleLine1}&nbsp;</span>
+                    <span className="inline font-light">{titleLine1}&nbsp;</span>
                     <span className="inline font-bold">{titleLine2}&nbsp;</span>
-                    <Image
-                        src={iconSrc}
-                        alt={iconAlt || titleLine2 || titleLine1}
-                        width={92}
-                        height={92}
-                        className={`${iconSizeClass} inline align-middle object-contain shrink-0`}
-                    />
+                    {iconSrc && (
+                        <Image
+                            src={iconSrc}
+                            alt={iconAlt || titleLine2 || titleLine1}
+                            width={92}
+                            height={92}
+                            className={`${iconSizeClass} inline align-middle object-contain shrink-0`}
+                        />
+                    )}
                 </span>
                 <span className="block font-bold">{titleLine3}</span>
             </h2>
 
-            <p className="mt-12 max-w-[50ch] lg:ltr:max-w-[38ch] md:rtl:max-w-[30ch] text-burgundy/80 text-xl md:text-2xl leading-relaxed">
+            <p className="mt-12 max-w-[50ch] lg:ltr:max-w-[38ch] md:rtl:max-w-[30ch] text-blush/80 text-xl md:text-2xl leading-relaxed">
                 {body}
             </p>
         </div>

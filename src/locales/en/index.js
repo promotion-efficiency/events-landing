@@ -1,33 +1,44 @@
 export default {
     nav: {
-        district: "The District",
-        overview: "Overview",
+        services: "Services",
+        district: "How We Work",
+        portfolio: "Portfolio",
         gallery: "Gallery",
-        developer: "The Developer",
-        register: "Register your interest",
+        clients: "Clients",
+        contact: "Contact Us",
     },
     hero: {
-        line1: "A space where",
-        line2: "life is amplified",
-        palmAlt: "Palm Icon"
+        overline: "Promotion Efficiency",
+        kicker: "Event Management • Exhibition Services",
+        headline: {
+            0: "AN EXPERIENCE",
+            1: "THAT STARTS WITH AN IDEA",
+            2: "AND ENDS WITH AN UNFORGETTABLE IMPACT"
+        },
+        body: "Towards an effectiveness built around your idea, and reflected in every detail of it.",
+        discoverLabel: "Discover our engagements",
+        scrollHint: "(Scroll)"
     },
     about: [
         {
             cards: [
                 {
                     "title": {
-                        0: "About",
-                        1: "the",
-                        2: "District"
+                        0: "How we turn",
+                        1: "your idea",
+                        2: "into reality"
 
                     },
-                    "body": "Miraf District is a mixed-use development in Khobar featuring different components that are:"
+                    "body": [
+                        "Promotion Efficiency helps you present a well-thought-out experience that embodies your vision and showcases your professionalism to your audience.",
+                        "From idea to execution, we ensure that every detail of the event serves your goals, reflects your identity, and leaves an unforgettable impression on attendees."
+                    ]
                 },
                 {
                     "title": {
-                        0: "Residential towers"
+                        0: "Exploratory meeting or needs assessment model"
                     },
-                    "body": "Miraf Residence blends comfort and sophistication, offering a peaceful sanctuary surrounded by lush landscapes and premium amenities."
+                    "body": "We begin with a comprehensive exploration of your vision and requirements, ensuring we understand your goals and the messages you want to convey to your audience."
                 }
             ]
         },
@@ -35,15 +46,15 @@ export default {
             cards: [
                 {
                     "title": {
-                        0: "Retail",
+                        0: "Consultation session to understand goals and target messages",
                     },
-                    "body": "A vibrant hub where commerce, entertainment, and community seamlessly converge."
+                    "body": "Through detailed consultation sessions, we dive deep into your entity's objectives, target audience, and the key messages you want to communicate through your event or exhibition."
                 },
                 {
                     "title": {
-                        0: "Hospitality"
+                        0: "Moodboard design reflecting the aesthetic and conceptual direction"
                     },
-                    "body": "Hotel Indigo elevates Miraf District with modern elegance, blending local charm, art and culture for an unforgettable and immersive stay."
+                    "body": "We create comprehensive moodboards that visually communicate the aesthetic and conceptual direction of your event or exhibition, ensuring every design element aligns with your vision and brand identity."
                 }
             ]
         },
@@ -51,9 +62,15 @@ export default {
             cards: [
                 {
                     "title": {
-                        0: "Offices",
+                        0: "Detailed implementation plan covering all organizational and technical aspects",
                     },
-                    "body": "Miraf Offices span 18 floors, blending refined design with panoramic views that inspire belonging and growth."
+                    "body": "We develop comprehensive implementation plans that cover every aspect of your event or exhibition, from logistics and scheduling to technical requirements and resource allocation."
+                },
+                {
+                    "title": {
+                        0: "Professional field implementation according to the highest standards",
+                    },
+                    "body": "Our team executes your event or exhibition with precision and professionalism, ensuring every detail meets the highest standards of quality and excellence."
                 },
                 {
                     "title": {
@@ -61,6 +78,7 @@ export default {
                         1: "Destination",
                         2: "in Khobar"
                     },
+                    "cta": "Book your free consultation now"
                 }
             ]
         },
@@ -69,46 +87,46 @@ export default {
         heading: "Overview",
         cta: "Download Brochure",
         pins: {
-            residences: {title: "Miraf Residences", value: "152", unit: "units"},
-            tower: {title: "Business Tower", subtitle: "Offices Area", value: "20,202", unit: "sqm"},
-            hotel: {title: "Hotel INDIGO", value: "240", unit: "keys"},
-            plaza: {title: "The Plaza at Miraf", subtitle: "Retail + Clinic NLA", value: "28,992", unit: "sqm"}
+            residences: {title: "Events Managed", value: "500+", unit: "events"},
+            tower: {title: "Exhibitions", subtitle: "Organized", value: "200+", unit: "exhibitions"},
+            hotel: {title: "Clients Served", value: "100+", unit: "clients"},
+            plaza: {title: "Years of Excellence", subtitle: "Experience", value: "10+", unit: "years"}
         }
     },
     showcase: [
         {
-            caption: "What does living in Miraf look like",
-            title: {0: "Flourishing Minds,", 1: "Communities", 2: "and Life"}
+            caption: "Transforming ideas into unforgettable experiences",
+            title: {0: "Excellence in", 1: "Event Management", 2: "and Execution"}
         },
         {
-            title: {0: "What can working", 1: "in Miraf add to you"}
+            title: {0: "What can our", 1: "events add to you"}
         },
         {
-            caption: "What can working in Miraf add to you",
-            title: {0: "Empowering your", 1: "Daily", 2: "Life"}
+            caption: "What can our events add to you",
+            title: {0: "Empowering your", 1: "Brand", 2: "Presence"}
 
 
         },
         {
-            caption: "rich lifestyle with shopping, cinema, dining, and the elegant hospitality of INDIGO Hotel.",
-            title: {0: "Vibrant Daily", 1: "Experience"}
+            caption: "Comprehensive event solutions from concept to execution, ensuring every detail reflects your vision.",
+            title: {0: "Complete", 1: "Event Solutions"}
         },
         {
-            caption: "Bringing together modern living, a dynamic work environment, and green spaces all in one place.",
-            title: {0: "Integrated", 1: "Lifestyle"}
+            caption: "Bringing together strategic planning, creative design, and flawless execution all in one service.",
+            title: {0: "Integrated", 1: "Event Services"}
         },
     ],
     residences: {
-        title: "Miraf Residences",
-        subtitle: "Where Serenity Meets Growth",
-        body: "Miraf Residences embody the perfect balance between comfort and elegance. Each space is thoughtfully designed to provide a tranquil environment, surrounded by green landscapes and exceptional amenities that meet your daily needs with ease and sophistication.",
-        cta: "Download Miraf Residences Brochure"
+        title: "Our Event Portfolio",
+        subtitle: "Where Vision Meets Execution",
+        body: "Our portfolio showcases exceptional events across various sectors. Each project is thoughtfully designed to provide a memorable experience, reflecting your brand identity and achieving your objectives with precision and professionalism.",
+        cta: "View Our Portfolio"
     },
     developer: {
-        title: "About the Developer",
-        bodyTop: "Refad is the real estate development and investment arm of the esteemed Al Qahtani Holding (AQH). It is headquartered in Al Khobar, Kingdom of Saudi Arabia. Refad has established itself as a privately owned and thriving company, boasting a dedicated team of Real Estate and Investment professionals.",
-        bodyBottom: "Our mission is to lead the real estate development market in Saudi Arabia by specializing in lifestyle projects and collaborating with customers to uncover high-value real estate opportunities.",
-        cta: "Visit Refad’s page"
+        title: "About Promotion Efficiency",
+        bodyTop: "Promotion Efficiency is a leading event management and exhibition services company based in Saudi Arabia. We specialize in transforming ideas into exceptional experiences through comprehensive event planning, creative design, and flawless execution.",
+        bodyBottom: "Our mission is to deliver outstanding event management services that reflect your vision, showcase your professionalism, and create unforgettable experiences for your audience. We work across various sectors, ensuring every detail serves your goals and leaves a lasting impression.",
+        cta: "Contact Us"
     },
     signup: {
         title: "Be Part of a Thriving Community",
@@ -142,22 +160,36 @@ export default {
         }
     },
     footer: {
+        tagline: "Your Hike to PEAK!",
+        copyright: "Promotion Efficiency Co. All right reserved. copyright 2025",
         nav: {
-            district: "The District",
-            overview: "Overview",
+            services: "Services",
+            district: "How We Work",
+            portfolio: "Portfolio",
             gallery: "Gallery",
-            developer: "The Developer",
-            register: "Register your interest",
+            clients: "Clients",
+            contact: "Contact Us",
         },
-        addresses: {
-            0: [
-                "P.O. Box 3581, Khobar 7099,",
-                "Kingdom of Saudi Arabia"
-            ],
-            1: [
-                "King Faisal Bin Abd Al Aziz,",
-                "Al Yarmouk, Al Khobar 34422"
-            ]
-        }
+    },
+    clients: {
+        title: "OUR CLIENTS",
+        description: "Partnering with progressive businesses to uncover their true purpose, helping them drive meaningful change & move the world forward.",
+        list: [
+            { name: "AQUATEC" },
+            { name: "SEABED 2030" },
+            { name: "CBR" },
+            { name: "PremFina" },
+            { name: "synergix" },
+            { name: "NAVRO" },
+            { name: "zodia CUSTODY" },
+            { name: "INCO" },
+            { name: "Entrix" },
+            { name: "BOUTIQUE MODERN" },
+        ]
+    },
+    testimonials: {
+        title: "Start an experience worthy of your brand",
+        cta: "Book your free consultation now",
+        image: "/images/cam12_office landscape_view_05.jpg"
     }
 };

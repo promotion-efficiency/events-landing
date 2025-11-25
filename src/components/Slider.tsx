@@ -56,14 +56,15 @@ const defaultBreakpoints: Required<SliderProps>["breakpoints"] = {
 */
 const cn = (...xs: Array<string | false | null | undefined>) => xs.filter(Boolean).join(" ");
 
-function useIsMobile(initial = true) {
-    const [isMobile, setIsMobile] = useState<boolean>(
-        typeof window !== "undefined" ? window.innerWidth < BREAKPOINT : initial
-    );
+function useIsMobile(initial = false) {
+    const [isMobile, setIsMobile] = useState<boolean>(initial);
     useEffect(() => {
-        const onResize = () => setIsMobile(window.innerWidth < BREAKPOINT);
-        window.addEventListener("resize", onResize, { passive: true });
-        return () => window.removeEventListener("resize", onResize);
+        const determine = () => {
+            setIsMobile(window.innerWidth < BREAKPOINT);
+        };
+        determine();
+        window.addEventListener("resize", determine, { passive: true });
+        return () => window.removeEventListener("resize", determine);
     }, []);
     return [isMobile, setIsMobile] as const;
 }
@@ -91,7 +92,12 @@ function ArrowIcon({ dir, kind }: { dir: "rtl" | "ltr"; kind: "prev" | "next" })
 
 function IconButton({onClick, dir, kind,}: { onClick: () => void; dir: "rtl" | "ltr"; kind: "prev" | "next"; }) {
     return (
-        <button type="button" aria-label={kind === "prev" ? "Previous" : "Next"} onClick={onClick} className="grid h-6 w-6 place-items-center rounded-full bg-burgundy/95 text-[#F6E6DA] hover:opacity-85 transition">
+        <button
+            type="button"
+            aria-label={kind === "prev" ? "Previous" : "Next"}
+            onClick={onClick}
+            className="grid h-8 w-8 place-items-center rounded-full border border-white/20 bg-white/5 text-blush hover:bg-white/10 transition"
+        >
             <ArrowIcon dir={dir} kind={kind} />
         </button>
     );
@@ -129,7 +135,7 @@ function Footer({total, index, onPrev, onNext, bgClass, dir,}: {total: number; i
 | - GSAP ScrollTrigger for ≥1024px
 |----------------------------------------------------------------------
 */
-export default function Slider({id, items, autoplayDelay = 5000, dir = "ltr", className = "w-full", bgClass = "bg-[#F3E6D6]", textClass = "text-burgundy",  style, background, containerClass = "container-x", heightClass = "", breakpoints = defaultBreakpoints, hasFooter = false, isUseGSAP = true, gsapSize=0}: SliderProps) {
+export default function Slider({id, items, autoplayDelay = 5000, dir = "ltr", className = "w-full", bgClass = "bg-[#050505]", textClass = "text-blush",  style, background, containerClass = "container-x", heightClass = "", breakpoints = defaultBreakpoints, hasFooter = false, isUseGSAP = true, gsapSize=0}: SliderProps) {
     const total = items.length;
     const isRTL = dir === "rtl";
     const [isMobile, setIsMobile] = useIsMobile(true);

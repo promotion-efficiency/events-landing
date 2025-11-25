@@ -44,6 +44,9 @@ export default function District() {
     | Background uses warm beige (#F3E6D6) to match Miraf branding.
     |
     */
+    const aboutIntroBody = (t("about.0.cards.0.body", { returnObjects: true }) as string[] | string);
+    const normalizedAboutIntroBody = Array.isArray(aboutIntroBody) ? aboutIntroBody.join(" ") : aboutIntroBody;
+
     return (
         <Slider
             id="district"
@@ -63,18 +66,13 @@ export default function District() {
                     titleLine1={t("about.0.cards.0.title.0")}
                     titleLine2={t("about.0.cards.0.title.1")}
                     titleLine3={t("about.0.cards.0.title.2")}
-                    body={t("about.0.cards.0.body")}
-                    iconSrc="/icons/ml_Icon_09.png"
-                    iconAlt={t("about.0.cards.0.title.1")}
                     gapClass="gap-4 sm:gap-6"
-                    iconSizeClass="h-12 w-12 sm:h-16 sm:w-16 md:h-24 md:w-24"
                 />,
 
                 <DistrictCard
                     key="residential-top"
                     imageSrc="/images/miraf_renders-09.png"
                     imageAlt={t("about.0.cards.1.title.0")}
-                    iconSrc="/icons/ml_icon_07.png"
                     title={t("about.0.cards.1.title.0")}
                     body={t("about.0.cards.1.body")}
                     imageOnTop
@@ -85,7 +83,6 @@ export default function District() {
                     key="retail-bottom"
                     imageSrc="/images/cam10_open_retail_semi_bird_05.jpg"
                     imageAlt={t("about.1.cards.0.title.0")}
-                    iconSrc="/icons/ml_icon_05.png"
                     title={t("about.1.cards.0.title.0")}
                     body={t("about.1.cards.0.body")}
                     imageOnTop={false}
@@ -95,7 +92,6 @@ export default function District() {
                     key="hotel-top"
                     imageSrc="/images/01_cam_13_lobby hotel _02.jpg"
                     imageAlt={t("about.1.cards.1.title.0")}
-                    iconSrc="/icons/ml_icon_08.png"
                     title={t("about.1.cards.1.title.0")}
                     body={t("about.1.cards.1.body")}
                     imageOnTop
@@ -105,20 +101,23 @@ export default function District() {
                     key="retail-bottom-2"
                     imageSrc="/images/cam12_office landscape_view_05.jpg"
                     imageAlt={t("about.2.cards.0.title.0")}
-                    iconSrc="/icons/ml_icon-06.png"
                     title={t("about.2.cards.0.title.0")}
                     body={t("about.2.cards.0.body")}
                     imageOnTop={false}
                 />,
+
+                <DistrictCard
+                    key="professional-implementation"
+                    imageSrc="/images/01_cam_13_lobby hotel _02.jpg"
+                    imageAlt={t("about.2.cards.1.title.0")}
+                    title={t("about.2.cards.1.title.0")}
+                    body={t("about.2.cards.1.body")}
+                    imageOnTop
+                />,
                 <MapCard
                     media={<MapMiraf/>}
-                    iconSrc="/icons/ml_Icon.png"
-                    iconAlt="map icon"
-                    titles={{
-                        line1: t("about.2.cards.1.title.0"),
-                        line2: t("about.2.cards.1.title.1"),
-                        line3: t("about.2.cards.1.title.2"),
-                    }}
+                    titles={{}}
+                    cta={t("about.2.cards.2.cta")}
                     mediaOnTop
                 />
 

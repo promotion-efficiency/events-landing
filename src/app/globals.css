@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-    --color-blush: #F7EBDC;
-    --color-burgundy: #471e1b;
+    --color-blush: #f5f5f2;
+    --color-burgundy: #050505;
 }
 
 /* Custom Cursor Styles - Keep default cursor visible */
@@ -16,6 +16,15 @@ img:hover {
   transform: scale(1.05);
 }
 
+/* Exclude logos from hover effect */
+img[alt*="Logo"], img[alt*="logo"], .no-logo-hover img {
+  transition: none;
+}
+
+img[alt*="Logo"]:hover, img[alt*="logo"]:hover, .no-logo-hover img:hover {
+  transform: none;
+}
+
 /* Ensure Next.js Image components also get the hover effect */
 .image-hover {
   transition: transform 0.3s ease-in-out;
@@ -25,18 +34,18 @@ img:hover {
   transform: scale(1.05);
 }
 
-/* Typography - Use Kanun font for paragraphs, labels, and footer */
+/* Typography - Use Gotham font for paragraphs, labels, and footer */
 p {
-  font-family: var(--font-kanun-ar);
+  font-family: var(--font-gotham), sans-serif;
   line-height: 1.4;
 }
 
 label {
-  font-family: var(--font-kanun-ar);
+  font-family: var(--font-gotham), sans-serif;
 }
 
 footer {
-  font-family: var(--font-kanun-ar);
+  font-family: var(--font-gotham), sans-serif;
 }
 
 /* Reduce spacing between headings and paragraphs */
@@ -54,37 +63,48 @@ li {
   margin-bottom: 0.25rem;
 }
 
-/* Kanun font utility class */
-.font-kanun {
-  font-family: var(--font-kanun-ar);
+/* Gotham font utility classes */
+.font-gotham {
+  font-family: var(--font-gotham), sans-serif;
+}
+
+.font-gotham-rounded {
+  font-family: var(--font-gotham-rounded), sans-serif;
+}
+
+.font-gotham-narrow {
+  font-family: var(--font-gotham-narrow), sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
+    background-color: #050505;
 }
 
-/* Default font (for English) */
+/* Default font (for English and Arabic) */
 body {
-    font-family: var(--font-angie-sans-pro), sans-serif;
+    font-family: var(--font-gotham), sans-serif;
+    background-color: #050505;
+    color: #f5f5f2;
 }
 
 /* Arabic text (RTL) */
 [dir="rtl"] body {
-    font-family: var(--font-lyon-arabic), sans-serif;
+    font-family: var(--font-gotham), sans-serif;
 }
 
-/* Elegant Arabic display font */
+/* Display fonts */
 .ar-display {
-    font-family: var(--font-lyon-arabic), serif;
+    font-family: var(--font-gotham-rounded), sans-serif;
 }
 
 .en-display {
-    font-family: var(--font-angie-sans-pro), sans-serif;
+    font-family: var(--font-gotham-rounded), sans-serif;
 }
 
-/* Kanun AR+ for accent text */
+/* Narrow font for accent text */
 .kanun {
-    font-family: var(--font-kanun-ar), sans-serif;
+    font-family: var(--font-gotham-narrow), sans-serif;
 }
 
 
@@ -151,5 +171,15 @@ body {
 }
 
 .pin-spacer-gallery-st {
-    background: #F7EBDC;
+    background: #050505;
+}
+
+/* Hide scrollbar but keep scrolling functionality */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
 }

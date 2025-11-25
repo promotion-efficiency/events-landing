@@ -4,44 +4,40 @@ import {AppProvider} from "@/context/AppContext";
 import i18n from "i18next";
 import I18nProvider from "@/providers/I18nProvider";
 import LangDirEffect from "@/components/LangDirEffect";
-import AppLoaderProvider from "@/providers/AppLoaderProvider";
 import CustomCursor from "@/components/CustomCursor";
 
 /*
-|--------------------------------------------------------------------------
-| $metadata
-|--------------------------------------------------------------------------
-|
-| Global page metadata (applies to all pages unless overridden).
-| You can add title, description, and icons here.
-|
+||--------------------------------------------------------------------------
+|| $metadata
+||--------------------------------------------------------------------------
+||
+|| Global page metadata (applies to all pages unless overridden).
+|| You can add title, description, and icons here.
+||
 */
 export const metadata = {
     title: {
-        default: "Miraf District - Premium Mixed-Use Development in Khobar, Saudi Arabia",
-        template: "%s | Miraf District"
+        default: "Promotion Efficiency - Event Management & Exhibition Services",
+        template: "%s | Promotion Efficiency"
     },
-    description: "Discover Miraf District, a premium mixed-use development in Khobar featuring residential towers, business offices, retail spaces, and Hotel INDIGO. Experience luxury living and working in the heart of Saudi Arabia.",
+    description: "Promotion Efficiency provides comprehensive event management and exhibition services. From concept to execution, we transform your ideas into unforgettable experiences that reflect your vision and showcase professionalism.",
     keywords: [
-        "Miraf District",
-        "Khobar real estate",
-        "Saudi Arabia property",
-        "mixed-use development",
-        "residential towers",
-        "business offices",
-        "Hotel INDIGO",
-        "retail spaces",
-        "luxury living",
-        "premium apartments",
-        "office spaces",
-        "shopping mall",
-        "Refad development",
-        "Al Khobar",
-        "Eastern Province"
+        "Promotion Efficiency",
+        "Event Management",
+        "Exhibition Services",
+        "Event Planning",
+        "Corporate Events",
+        "Exhibition Organization",
+        "Event Execution",
+        "Saudi Arabia Events",
+        "Professional Event Management",
+        "Event Services",
+        "Exhibition Management",
+        "Event Coordination"
     ],
-    authors: [{ name: "Refad Development" }],
-    creator: "Refad Development",
-    publisher: "Refad Development",
+    authors: [{ name: "Promotion Efficiency" }],
+    creator: "Promotion Efficiency",
+    publisher: "Promotion Efficiency",
     formatDetection: {
         email: false,
         address: false,
@@ -56,16 +52,16 @@ export const metadata = {
         },
     },
     openGraph: {
-        title: "Miraf District - Premium Mixed-Use Development in Khobar",
-        description: "Discover Miraf District, a premium mixed-use development in Khobar featuring residential towers, business offices, retail spaces, and Hotel INDIGO.",
+        title: "Promotion Efficiency - Event Management & Exhibition Services",
+        description: "Promotion Efficiency provides comprehensive event management and exhibition services. From concept to execution, we transform your ideas into unforgettable experiences.",
         url: 'https://your-domain.com',
-        siteName: 'Miraf District',
+        siteName: 'Promotion Efficiency',
         images: [
             {
-                url: '/images/miraf-og.png',
+                url: '/images/cam12_office landscape_view_05.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'Miraf District - Premium Mixed-Use Development',
+                alt: 'Promotion Efficiency - Event Management & Exhibition Services',
             },
         ],
         locale: 'en_US',
@@ -73,9 +69,9 @@ export const metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: "Miraf District - Premium Mixed-Use Development in Khobar",
-        description: "Discover Miraf District, a premium mixed-use development in Khobar featuring residential towers, business offices, retail spaces, and Hotel INDIGO.",
-        images: ['/images/miraf-og.png'],
+        title: "Promotion Efficiency - Event Management & Exhibition Services",
+        description: "Promotion Efficiency provides comprehensive event management and exhibition services. From concept to execution, we transform your ideas into unforgettable experiences.",
+        images: ['/images/cam12_office landscape_view_05.jpg'],
     },
     robots: {
         index: true,
@@ -94,97 +90,80 @@ export const metadata = {
 }
 
 /*
-|--------------------------------------------------------------------------
-| $fonts
-|--------------------------------------------------------------------------
-|
-| Registers local fonts via Next.js `next/font/local` and exposes CSS
-| variables on <body> for use across the app (Tailwind/CSS).
-|
-| Variables:
-|   --font-abc-arizona-serif
-|   --font-angie-sans-pro
-|   --font-graphik-arabic
-|   --font-kanun-ar
-|   --font-lyon-arabic
-|
+||--------------------------------------------------------------------------
+|| $fonts
+||--------------------------------------------------------------------------
+||
+|| Registers local fonts via Next.js `next/font/local` and exposes CSS
+|| variables on <body> for use across the app (Tailwind/CSS).
+||
+|| Variables:
+||   --font-gotham
+||   --font-gotham-rounded
+||   --font-gotham-narrow
+||
 */
 
 /*
-| ABC Arizona Serif — Display (EN)
-| variable: --font-abc-arizona-serif | weights: 300
+|| Gotham — Display & UI (EN/AR)
+|| variable: --font-gotham | weights: 100, 300, 400, 500, 700, 900
 */
-const abcArizonaSerif = localFont({
+const gotham = localFont({
     src: [
-        { path: "./fonts/ABCArizonaSerif-Light.otf", weight: "300", style: "normal" },
+        { path: "./fonts/GothamNarrow-XLight.otf", weight: "100", style: "normal" },
+        { path: "./fonts/Gotham-Thin.otf", weight: "300", style: "normal" },
+        { path: "./fonts/Gotham-Medium.otf", weight: "400", style: "normal" },
+        { path: "./fonts/Gotham-Medium.otf", weight: "500", style: "normal" },
+        { path: "./fonts/Gotham-Ultra.otf", weight: "700", style: "normal" },
+        { path: "./fonts/GothamNarrow-Black.otf", weight: "900", style: "normal" },
     ],
-    variable: "--font-abc-arizona-serif",
+    variable: "--font-gotham",
     display: "swap",
 });
 
 /*
-| Angie Sans Pro — UI Sans (EN)
-| variable: --font-angie-sans-pro | weights: 400, 600
+|| Gotham Rounded — Display (EN/AR)
+|| variable: --font-gotham-rounded | weights: 300, 400, 500, 700
 */
-const angieSansPro = localFont({
+const gothamRounded = localFont({
     src: [
-        { path: "./fonts/AngieSansPro-Regular.otf", weight: "400", style: "normal" },
-        { path: "./fonts/AngieSansPro-Demi.otf", weight: "600", style: "normal" },
+        { path: "./fonts/gotham-rounded-light.otf", weight: "300", style: "normal" },
+        { path: "./fonts/gotham-rounded-book.otf", weight: "400", style: "normal" },
+        { path: "./fonts/gotham-rounded-medium.otf", weight: "500", style: "normal" },
+        { path: "./fonts/gotham-rounded-bold.otf", weight: "700", style: "normal" },
     ],
-    variable: "--font-angie-sans-pro",
+    variable: "--font-gotham-rounded",
     display: "swap",
 });
 
 /*
-| Graphik Arabic — UI Sans (AR)
-| variable: --font-graphik-arabic | weights: 400
+|| Gotham Narrow — UI Sans (EN/AR)
+|| variable: --font-gotham-narrow | weights: 100, 300, 400, 500, 700, 900
 */
-const graphikArabic = localFont({
+const gothamNarrow = localFont({
     src: [
-        { path: "./fonts/GraphikArabic-Regular.otf", weight: "400", style: "normal" },
+        { path: "./fonts/GothamNarrow-XLight.otf", weight: "100", style: "normal" },
+        { path: "./fonts/GothamNarrow-Thin.otf", weight: "300", style: "normal" },
+        { path: "./fonts/GothamNarrow-Book.otf", weight: "400", style: "normal" },
+        { path: "./fonts/GothamNarrow-Medium.otf", weight: "500", style: "normal" },
+        { path: "./fonts/GothamNarrow-Ultra.otf", weight: "700", style: "normal" },
+        { path: "./fonts/GothamNarrow-Black.otf", weight: "900", style: "normal" },
     ],
-    variable: "--font-graphik-arabic",
+    variable: "--font-gotham-narrow",
     display: "swap",
 });
 
 /*
-| Kanun AR+ — Accent (AR)
-| variable: --font-kanun-ar | weights: 300, 400, 500
-*/
-const kanunAR = localFont({
-    src: [
-        { path: "./fonts/KanunAR+LT-Light.otf", weight: "300", style: "normal" },
-        { path: "./fonts/KanunAR+LT-Regular.otf", weight: "400", style: "normal" },
-        { path: "./fonts/KanunAR+LT-Medium.otf", weight: "500", style: "normal" },
-    ],
-    variable: "--font-kanun-ar",
-    display: "swap",
-});
-
-/*
-| Lyon Arabic Display — Headlines (AR)
-| variable: --font-lyon-arabic | weights: 300, 400
-*/
-const lyonArabic = localFont({
-    src: [
-        { path: "./fonts/LyonArabicDisplay-Light.otf", weight: "300", style: "normal" },
-        { path: "./fonts/LyonArabicDisplay-Regular.otf", weight: "400", style: "normal" },
-    ],
-    variable: "--font-lyon-arabic",
-    display: "swap",
-});
-
-/*
-|--------------------------------------------------------------------------
-| $root-layout
-|--------------------------------------------------------------------------
-|
-| Top-level layout:
-| - Wraps the app with <AppProvider> (language/context state).
-| - Sets <html lang/dir> from the current i18n language.
-| - Applies local font CSS variables on <body> for Tailwind/CSS usage.
-| - Injects <I18nProvider> so react-i18next hooks work in children.
-|
+||--------------------------------------------------------------------------
+|| $root-layout
+||--------------------------------------------------------------------------
+||
+|| Top-level layout:
+|| - Wraps the app with <AppProvider> (language/context state).
+|| - Sets <html lang/dir> from the current i18n language.
+|| - Applies local font CSS variables on <body> for Tailwind/CSS usage.
+|| - Injects <I18nProvider> so react-i18next hooks work in children.
+||
 */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     /*
@@ -203,17 +182,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     */
     return (
         <html lang={i18n.language || "en"} dir={i18n.language === "ar" ? "rtl" : "ltr"}>
-        <body className={[abcArizonaSerif.variable, angieSansPro.variable, graphikArabic.variable, kanunAR.variable, lyonArabic.variable,].join(" ")}>
+        <body className={[gotham.variable, gothamRounded.variable, gothamNarrow.variable].join(" ")}>
         <CustomCursor />
-        <AppLoaderProvider>
-            <AppProvider>
-                <I18nProvider>
-                    <LangDirEffect />
-                    {children}
-                </I18nProvider>
-            </AppProvider>
-        </AppLoaderProvider>
-
+        <AppProvider>
+            <I18nProvider>
+                <LangDirEffect />
+                {children}
+            </I18nProvider>
+        </AppProvider>
         </body>
         </html>
     );

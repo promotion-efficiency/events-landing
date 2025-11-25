@@ -3,9 +3,15 @@
 import {useTranslation} from "react-i18next";
 import Slider from "@/components/Slider";
 import {useAppContext} from "@/context/AppContext";
-import ShowcaseCard from "@/components/ShowcaseCard";
-import Image from "next/image";
 import ImageCard from "@/components/ImageCard";
+
+const GALLERY_IMAGES = [
+    "/images/gallary/gallary1.png",
+    "/images/gallary/gallary2.png",
+    "/images/gallary/gallery3.png",
+    "/images/gallary/gallery4.png",
+    "/images/gallary/gallery5.png",
+];
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +53,7 @@ export default function Gallery() {
         <Slider
             id="gallery"
             dir={direction}
-            bgClass={'bg-blush'}
+            bgClass="bg-[#050505]"
             heightClass="h-[50svh] md:h-[95svh] max-h-[1000px]"
             containerClass=""
             hasFooter={true}
@@ -55,24 +61,13 @@ export default function Gallery() {
             breakpoints= {{
                 0: { slidesPerView: 1, spaceBetween: 0 },
             }}
-            items={[
+            items={GALLERY_IMAGES.map((image, index) => (
                 <ImageCard
-                    src="/images/full_project.png"
-                    alt="Miraf Overview"
-                />,
-                <ImageCard
-                    src="/images/miraf_renders_10.png"
-                    alt="Miraf Overview"
-                />,
-                <ImageCard
-                    src="/images/02_Cam1_Road_Front_Building_06.jpg"
-                    alt="Miraf Overview"
-                />,
-                <ImageCard
-                    src="/images/cam09_retail_interior_06.jpg"
-                    alt="Miraf Overview"
-                />,
-            ]}
+                    key={image}
+                    src={image}
+                    alt={`Gallery image ${index + 1}`}
+                />
+            ))}
         />
     );
 
