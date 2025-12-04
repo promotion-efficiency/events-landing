@@ -37,12 +37,25 @@ jobs:
           NODE_ENV: production
           CI: true
 
-      - name: Move build output to dist
+      - name: Fix image paths for GitHub Pages
         run: |
           if [ ! -d "out" ]; then
             echo "Error: 'out' directory not found after build"
             exit 1
           fi
+          # Fix image and asset paths in HTML files (Linux-compatible: sed -i requires extension)
+          find out -type f -name "*.html" | while read file; do
+            sed -i.bak 's|src="/images/|src="/events-landing/images/|g' "$file"
+            sed -i.bak 's|src="/icons/|src="/events-landing/icons/|g' "$file"
+            sed -i.bak 's|src="/videos/|src="/events-landing/videos/|g' "$file"
+            sed -i.bak 's|href="/images/|href="/events-landing/images/|g' "$file"
+            sed -i.bak 's|href="/icons/|href="/events-landing/icons/|g' "$file"
+            rm -f "$file.bak"
+          done
+          echo "Image paths fixed for GitHub Pages"
+
+      - name: Move build output to dist
+        run: |
           mv out dist
           echo "Build output moved to 'dist' directory"
           ls -la dist/ | head -20

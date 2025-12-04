@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
     output: 'export',
     basePath: '/events-landing',
+    assetPrefix: '/events-landing',
     images: { 
         unoptimized: true,
         formats: ['image/webp', 'image/avif'],
