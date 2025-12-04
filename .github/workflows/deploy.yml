@@ -37,14 +37,15 @@ jobs:
           NODE_ENV: production
           CI: true
 
-      - name: Verify build output
+      - name: Move build output to dist
         run: |
           if [ ! -d "out" ]; then
             echo "Error: 'out' directory not found after build"
             exit 1
           fi
-          echo "Build output verified. Files in 'out' directory:"
-          ls -la out/ | head -20
+          mv out dist
+          echo "Build output moved to 'dist' directory"
+          ls -la dist/ | head -20
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -52,7 +53,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./dist
 
   deploy:
     environment:
