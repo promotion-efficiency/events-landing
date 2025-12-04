@@ -43,7 +43,7 @@ export const metadata = {
         address: false,
         telephone: false,
     },
-    metadataBase: new URL('https://your-domain.com'),
+    metadataBase: new URL('https://promotion-efficiency.github.io/events-landing'),
     alternates: {
         canonical: '/',
         languages: {
@@ -54,7 +54,7 @@ export const metadata = {
     openGraph: {
         title: "Promotion Efficiency - Event Management & Exhibition Services",
         description: "Promotion Efficiency provides comprehensive event management and exhibition services. From concept to execution, we transform your ideas into unforgettable experiences.",
-        url: 'https://your-domain.com',
+        url: 'https://promotion-efficiency.github.io/events-landing',
         siteName: 'Promotion Efficiency',
         images: [
             {
