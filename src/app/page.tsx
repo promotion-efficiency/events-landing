@@ -1,6 +1,7 @@
 "use client";
 
 import Banner from "@/components/Banner";
+import AboutSection from "@/components/AboutSection";
 import PreviousProjects from "@/components/PreviousProjects";
 import ServicesSection from "@/components/ServicesSection";
 import District from "@/components/District";
@@ -47,6 +48,7 @@ export default function HomePage() {
             <main>
                 {/* Primary hero section */}
                 <Banner/>
+                <AboutSection/>
                 <ServicesSection/>
                 <District/>
                 <PreviousProjects/>

@@ -95,14 +95,14 @@ export default function Footer(
                 <div className="border-t border-[#050505]/10" />
 
                 {/* Content Section */}
-                <div className="py-8 md:py-10">
-                    <div className="flex flex-col lg:flex-row justify-between gap-10 md:gap-16">
+                <div className="py-6 sm:py-8 md:py-10">
+                    <div className="flex flex-col lg:flex-row justify-between gap-8 sm:gap-10 md:gap-12 lg:gap-16">
                         {/*
                         |----------------------------------------------------------
                         | Left: Tagline, Social Icons, Copyright
                         |----------------------------------------------------------
                         */}
-                        <div className="flex-1 space-y-4">
+                        <div className="flex-1 space-y-3 sm:space-y-4">
                             {/* Logo */}
                             <div className="mb-2 no-logo-hover">
                                 <Image 
@@ -110,17 +110,17 @@ export default function Footer(
                                     alt="Logo" 
                                     width={80} 
                                     height={40} 
-                                    className="h-15 w-auto object-contain"
+                                    className="h-12 sm:h-14 md:h-16 w-auto object-contain"
                                 />
                             </div>
 
                             {/* Tagline */}
-                            <h3 className="text-xl md:text-2xl text-[#050505] font-medium pt-6">
+                            <h3 className="text-subheadline text-[#050505] pt-4 sm:pt-5 md:pt-6">
                                 {t("footer.tagline")}
                             </h3>
 
                             {/* Copyright */}
-                            <p className="text-sm text-[#050505]/60">
+                            <p className="text-body-small text-[#050505]/60">
                                 {t("footer.copyright")}
                             </p>
                         </div>
@@ -130,8 +130,8 @@ export default function Footer(
                         | Right: Navigation Links
                         |----------------------------------------------------------
                         */}
-                        <nav className="flex-1 lg:text-right">
-                            <ul className="space-y-3 text-xl leading-7">
+                        <nav className="flex-1 lg:text-right mt-6 lg:mt-0">
+                            <ul className="space-y-2 sm:space-y-3 text-body sm:text-body-large leading-6 sm:leading-7">
                                 {nav.map((item) => (
                                     <li key={item.label}>
                                         <Link

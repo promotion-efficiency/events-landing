@@ -38,8 +38,8 @@ export default function AnimatedText({
     |--------------------------------------------|
     */
     const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px',
         triggerOnce: true,
         delay
     });

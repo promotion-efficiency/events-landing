@@ -53,11 +53,11 @@ export default function DistrictCard({
     | Body width constrained for readability.
     */
     const TextBlock = (
-        <div className="text-blush">
-            <h3 className="text-5xl sm:text-6xl font-light">
+        <div className="text-blush px-4 sm:px-6 md:px-8">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium">
                 {title}
             </h3>
-            <p className={`mt-3 xl:mt-6 text-blush/80 text-base sm:text-md leading-relaxed ${bodyWidth}`}>
+            <p className={`mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-blush/80 text-body leading-relaxed ${bodyWidth}`}>
                 {body}
             </p>
         </div>
@@ -74,15 +74,15 @@ export default function DistrictCard({
     */
     return (
         <div className={`flex flex-col w-full justify-center ${className}`}>
-            <div className="w-full md:w-[80%] sm:w-full max-w-[90svh] md:max-w-full lg:max-w-[80svh] mx-auto">
+            <div className="w-full sm:w-[90%] md:w-[85%] lg:w-[80%] max-w-[95svh] sm:max-w-[90svh] md:max-w-full lg:max-w-[80svh] mx-auto px-2 sm:px-4 md:px-6">
                 {imageOnTop ? (
                     <>
                         {ImageBlock}
-                        <div className="mt-6 sm:mt-10">{TextBlock}</div>
+                        <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-10">{TextBlock}</div>
                     </>
                 ) : (
                     <>
-                        <div className="mb-6 sm:mb-10">{TextBlock}</div>
+                        <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">{TextBlock}</div>
                         {ImageBlock}
                     </>
                 )}

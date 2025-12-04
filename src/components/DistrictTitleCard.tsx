@@ -53,7 +53,7 @@ export default function DistrictTitleCard(
         iconSrc,
         iconAlt = "",
         paddingStartClass = "",
-        titleSizeClass = "text-6xl sm:text-7xl md:text-8xl",
+        titleSizeClass = "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl",
         gapClass = "gap-4 sm:gap-6",
         iconSizeClass = "h-12 w-12 md:h-16 md:w-16",
         className = "",
@@ -69,11 +69,11 @@ export default function DistrictTitleCard(
     |
     */
     return (
-        <div className={`flex flex-col w-full h-full justify-center min-h-[inherit]  ${paddingStartClass} ${className}`}>
+        <div className={`flex flex-col w-full h-full justify-center min-h-[inherit] px-4 sm:px-6 md:px-8 lg:px-10 ${paddingStartClass} ${className}`}>
             <h2 className={`leading-[0.95] tracking-tight text-blush ${titleSizeClass}`}>
                 <span className={`${gapClass}`}>
-                    <span className="inline font-light">{titleLine1}&nbsp;</span>
-                    <span className="inline font-bold">{titleLine2}&nbsp;</span>
+                    <span className="inline font-medium">{titleLine1}&nbsp;</span>
+                    <span className="inline font-black">{titleLine2}&nbsp;</span>
                     {iconSrc && (
                         <Image
                             src={iconSrc}
@@ -84,10 +84,10 @@ export default function DistrictTitleCard(
                         />
                     )}
                 </span>
-                <span className="block font-bold">{titleLine3}</span>
+                <span className="block font-black">{titleLine3}</span>
             </h2>
 
-            <p className="mt-12 max-w-[50ch] lg:ltr:max-w-[38ch] md:rtl:max-w-[30ch] text-blush/80 text-xl md:text-2xl leading-relaxed">
+            <p className="mt-6 sm:mt-8 md:mt-10 lg:mt-12 max-w-[50ch] lg:ltr:max-w-[38ch] md:rtl:max-w-[30ch] text-blush/80 text-body-large leading-relaxed">
                 {body}
             </p>
         </div>

@@ -110,11 +110,7 @@ export const metadata = {
 */
 const gotham = localFont({
     src: [
-        { path: "./fonts/GothamNarrow-XLight.otf", weight: "100", style: "normal" },
-        { path: "./fonts/Gotham-Thin.otf", weight: "300", style: "normal" },
-        { path: "./fonts/Gotham-Medium.otf", weight: "400", style: "normal" },
         { path: "./fonts/Gotham-Medium.otf", weight: "500", style: "normal" },
-        { path: "./fonts/Gotham-Ultra.otf", weight: "700", style: "normal" },
         { path: "./fonts/GothamNarrow-Black.otf", weight: "900", style: "normal" },
     ],
     variable: "--font-gotham",
@@ -127,10 +123,8 @@ const gotham = localFont({
 */
 const gothamRounded = localFont({
     src: [
-        { path: "./fonts/gotham-rounded-light.otf", weight: "300", style: "normal" },
-        { path: "./fonts/gotham-rounded-book.otf", weight: "400", style: "normal" },
         { path: "./fonts/gotham-rounded-medium.otf", weight: "500", style: "normal" },
-        { path: "./fonts/gotham-rounded-bold.otf", weight: "700", style: "normal" },
+        { path: "./fonts/gotham-rounded-bold.otf", weight: "900", style: "normal" },
     ],
     variable: "--font-gotham-rounded",
     display: "swap",
@@ -142,11 +136,7 @@ const gothamRounded = localFont({
 */
 const gothamNarrow = localFont({
     src: [
-        { path: "./fonts/GothamNarrow-XLight.otf", weight: "100", style: "normal" },
-        { path: "./fonts/GothamNarrow-Thin.otf", weight: "300", style: "normal" },
-        { path: "./fonts/GothamNarrow-Book.otf", weight: "400", style: "normal" },
         { path: "./fonts/GothamNarrow-Medium.otf", weight: "500", style: "normal" },
-        { path: "./fonts/GothamNarrow-Ultra.otf", weight: "700", style: "normal" },
         { path: "./fonts/GothamNarrow-Black.otf", weight: "900", style: "normal" },
     ],
     variable: "--font-gotham-narrow",

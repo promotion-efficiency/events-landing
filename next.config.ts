@@ -10,31 +10,8 @@ const nextConfig: NextConfig = {
     poweredByHeader: false,
     generateEtags: true,
     trailingSlash: false,
-    async headers() {
-        return [
-            {
-                source: '/(.*)',
-                headers: [
-                    {
-                        key: 'X-Content-Type-Options',
-                        value: 'nosniff',
-                    },
-                    {
-                        key: 'X-Frame-Options',
-                        value: 'DENY',
-                    },
-                    {
-                        key: 'X-XSS-Protection',
-                        value: '1; mode=block',
-                    },
-                    {
-                        key: 'Referrer-Policy',
-                        value: 'origin-when-cross-origin',
-                    },
-                ],
-            },
-        ];
-    },
+    // Note: headers() is not supported in static export mode
+    // If you need custom headers, configure them in your GitHub Pages settings or use a custom domain with .htaccess
 };
 
 export default nextConfig;
