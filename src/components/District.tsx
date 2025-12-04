@@ -66,6 +66,7 @@ export default function District() {
                     titleLine1={t("about.0.cards.0.title.0")}
                     titleLine2={t("about.0.cards.0.title.1")}
                     titleLine3={t("about.0.cards.0.title.2")}
+                    body={normalizedAboutIntroBody}
                     gapClass="gap-4 sm:gap-6"
                 />,
 
